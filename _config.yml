@@ -1,0 +1,24 @@
+# Site settings
+title: Svizzera
+client:
+  name: Svizzera Turismo
+  link: https://www.myswitzerland.com/it/home.html
+core-se-link: https://it.secretescapes.com/offerte-in-corso
+description: >
+  Quando senti dire “Svizzera” pensi a cime innevate o coperte di verde, orologi e cioccolata? D’accordo, anche noi. Ma questo paese confinante con il nostro, ha molto, molto di più da offrire. Una proposta enogastronomica da leccarsi i baffi, percorsi naturalistici da esplorare e laghi in cui tuffarsi, musei e città tutti da scoprire. Avventurati con noi in questo viaggio elvetico, non resterai deluso.
+
+# file paths
+url:     "http://mp.secretescapes.com" # the base hostname & protocol for your site
+baseurl: "/svizzera" # the subpath of your site, e.g. /blog/
+img:     "/svizzera/_assets/img"
+css:     "/svizzera/_assets/css"
+js:      "/svizzera/_assets/js"
+
+
+# Build settings
+markdown: kramdown
+exclude: [node_modules, gulpfile.js, package.json, package-lock.json, js/script.js]
+keep_files: [_assets]
+sass:
+    sass_dir: css
+    style: compressed

@@ -1,0 +1,19 @@
+<div class="js-modal modal__bg is-closed">
+  <div class="modal__wrap">
+
+    <!-- loop through each destination on page and create a modal for the getting there content -->
+    {% assign page-destinations = page.destinations %}
+    {% for destination in page-destinations %}
+
+      <div class="modal modal--standard is-closed" data-modal-id="{{destination.id}}">
+        <div class="js-close-modal modal__close"></div>
+        <div class="modal__content content-spacing">
+          <div class="title title--lg">How to get to {{destination.title}}</div>
+          <p>{{destination.getting-there-content}}</p>
+        </div>
+      </div>
+
+    {% endfor %}
+
+  </div>
+</div>

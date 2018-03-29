@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  {% include page/head.html %}
+
+  <body>
+
+    {% include page/header.html %}
+
+    {% include page/banner.html %}
+
+    <div class="content-spacing section-spacing">
+      {{ content }}
+    </div>
+
+    {% unless page.id == 'offers' %}
+      {% include page/promo-sign-up.html %}
+    {% endunless %}
+
+    {% include page/footer.html %}
+
+  </body>
+
+</html>

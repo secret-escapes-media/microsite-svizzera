@@ -1,0 +1,52 @@
+---
+layout: default
+---
+
+<div class="vpad--xxl bg--light">
+  <div class="container">
+    <div class="row row--gutters-lg row--valign-center">
+      <div class="col col--xxl-5">
+        <p class="text--lg">{{page.intro}}</p>
+        <div class="space--sm"></div>
+        <a id="track-btn-intro-download" href="{{site.baseurl}}/_assets/pdf/{% if page.pdf %}{{page.pdf}}{% else %}Magazine_Swiss_urban_feeling_2018_i.pdf{% endif %}" class="btn btn--red" download>Scarica la guida in PDF</a>
+      </div>
+      <div class="col col--xxl-7">
+        <div class="bg-img bg-img--16-9" style="background-image: url('{{site.img}}/content/{{page.id}}/01.jpg');"></div>
+        <div class="row row--constant-6-6 row--no-gutters">
+          <div class="col"><div class="bg-img bg-img--16-9" style="background-image: url('{{site.img}}/content/{{page.id}}/02.jpg');"></div></div>
+          <div class="col"><div class="bg-img bg-img--16-9" style="background-image: url('{{site.img}}/content/{{page.id}}/03.jpg');"></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% for destination in page.destinations %}
+  <div class="vpad--xxxl{% cycle '', ' bg--light' %}">
+    <div class="container container--xl">
+      <div class="text--center">
+        <div class="title--xxxl title--underline">{{destination.title}}</div>
+        <p>{{destination.description}}</p>
+      </div>
+    </div>
+    <div class="container space--xl">
+      <div class="row row--xl-4-4-4">
+        {% for poi in destination.pois %}
+          <div class="col">
+            <div class="container container--no-padding container--md">
+              <a href="{{poi.link}}">
+                <div class="bg-img bg-img--3-2" style="background-image: url('{{site.img}}/content/{{page.id}}/{{poi.id}}.jpg');"></div>
+              </a>
+              <div class="vpad--sm">
+                <div class="title title--md text--dark">{{poi.title}}</div>
+                <p>{{poi.description}}</p>
+              </div>
+              <a id="track-more-info-{{poi.id}}" href="{{poi.link}}" class="btn btn--sm btn--outline btn--outline-red">Più informazioni</a>
+            </div>
+            <div class="space--md"></div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+{% endfor %}

@@ -1,0 +1,9 @@
+// general styles for the project that wouldn't be a reuseable component
+
+// width for the svg title on the home page
+.title-width { max-width: 550px; }
+
+br.desktop-break {
+  display: none;
+  @include bp($xl) { display: block; }
+}

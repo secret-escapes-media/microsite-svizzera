@@ -1,0 +1,40 @@
+---
+layout: default
+id: overview
+nav: true
+nav-order: 1
+title: Home
+intro: Quando senti dire “Svizzera” pensi a cime innevate o coperte di verde, orologi e cioccolata? D’accordo, anche noi. Ma questo paese confinante con il nostro, ha molto, molto di più da offrire. Una proposta enogastronomica da leccarsi i baffi, percorsi naturalistici da esplorare e laghi in cui tuffarsi, musei e città tutti da scoprire. Avventurati con noi in questo viaggio elvetico, non resterai deluso.
+
+banner:
+  content: >
+    <div class="container title-width">
+      <img src="{{site.img}}/content/overview/title.svg" alt="Explore Switzerland">
+    </div>
+---
+
+<div class="bg--light vpad--xxl">
+  <div class="container container--xl text--center text--lg">
+    <p>{{page.intro}}</p>
+  </div>
+</div>
+
+
+<div class="vpad--xxxl">
+  <div class="container">
+    {% assign content-pages = site.html_pages | where: 'content-pages', 'true' | sort: 'nav-order' %}
+    {% for page in content-pages %}
+      <div class="harvey{% cycle '', ' harvey--swap' %}">
+        <div class="harvey__img" style="background-image: url('{{site.img}}/content/overview/{{page.id}}.jpg');">
+          <a href="{{site.baseurl}}{{page.url}}" class="harvey__link"></a>
+        </div>
+        <div class="harvey__text">
+          <h2 class="title title--xl title--underline">{{page.title}}</h2>
+          <p>{{page.intro}}</p>
+          <div class="space--md"></div>
+          <a href="{{site.baseurl}}{{page.url}}" class="btn btn--outline btn--outline-red btn--lg">Scopri di più</a>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</div>
